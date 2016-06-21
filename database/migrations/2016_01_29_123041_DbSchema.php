@@ -12,7 +12,7 @@ class DbSchema extends Migration
      */
     public function up()
     {
-        Schema::create('point', function(Blueprint $table)
+        Schema::create('points', function(Blueprint $table)
         {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
@@ -20,7 +20,7 @@ class DbSchema extends Migration
             $table->string('source');
             $table->string('source_url');
             $table->string('valid_until');
-            $table->int('weight');
+            $table->integer('weight');
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ class DbSchema extends Migration
      */
     public function down()
     {
-        Schema::drop('point');
+        Schema::drop('points');
     }
 }

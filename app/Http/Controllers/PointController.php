@@ -27,4 +27,9 @@ class PointController extends Controller
         $point->weight = 0;
         $point->save();
     }
+
+    public function delete(Request $request)
+    {
+    	Point::destroy($request->input('point_id'));
+    }
 }
